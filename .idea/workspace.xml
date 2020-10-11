@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="67fa53d9-8c1a-4340-bf15-7f6fb464784e" name="Default Changelist" comment="" />
+    <list default="true" id="67fa53d9-8c1a-4340-bf15-7f6fb464784e" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -12,6 +15,7 @@
     <execution />
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="ROOT_SYNC" value="DONT_SYNC" />
   </component>
   <component name="PhpWorkspaceProjectConfiguration">
@@ -115,6 +119,7 @@
     </include_path>
   </component>
   <component name="ProjectId" id="1ijAEo2g4kX7e90OU4gjyG472hh" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -148,7 +153,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1602410519088</updated>
-      <workItem from="1602410520367" duration="4686000" />
+      <workItem from="1602410520367" duration="4970000" />
     </task>
     <servers />
   </component>
@@ -156,6 +161,14 @@
     <option name="version" value="3" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="1164" y="609" key="Github.ShareDialog" timestamp="1602420913308">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state x="1164" y="609" key="Github.ShareDialog/0.0.2560.1400@0.0.2560.1400" timestamp="1602420913308" />
+    <state x="1047" y="418" key="Github.UntrackedFilesDialog" timestamp="1602420929114">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state x="1047" y="418" key="Github.UntrackedFilesDialog/0.0.2560.1400@0.0.2560.1400" timestamp="1602420929114" />
     <state x="1109" y="635" key="NewPhpFileDialog" timestamp="1602415327250">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
