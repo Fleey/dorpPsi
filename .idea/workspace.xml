@@ -1,16 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="67fa53d9-8c1a-4340-bf15-7f6fb464784e" name="Default Changelist" comment="">
+    <list default="true" id="67fa53d9-8c1a-4340-bf15-7f6fb464784e" name="Default Changelist" comment="add data">
+      <change afterPath="$PROJECT_DIR$/app/Admin/Controllers/ProductController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Common/functions.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Common/response.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Models/Areas.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Models/Customers.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Models/OrderInfo.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Models/Orders.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Models/Products.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Admin/Controllers/TestController.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Admin/routes.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Admin/routes.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Controller.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Controller.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ComposerSettings" synchronizationState="SYNCHRONIZE">
+  <component name="ComposerSettings" doNotAsk="true" synchronizationState="SYNCHRONIZE">
     <pharConfigPath>$PROJECT_DIR$/composer.json</pharConfigPath>
     <execution />
   </component>
@@ -119,7 +130,9 @@
     </include_path>
   </component>
   <component name="ProjectId" id="1ijAEo2g4kX7e90OU4gjyG472hh" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -131,6 +144,7 @@
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="npm" />
+    <property name="php.override.implement.member.chooser.php.doc" value="NONE" />
     <property name="settings.editor.selected.configurable" value="vcs.Git" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
@@ -153,14 +167,37 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1602410519088</updated>
-      <workItem from="1602410520367" duration="4970000" />
+      <workItem from="1602410520367" duration="5054000" />
+      <workItem from="1602898148558" duration="1153000" />
+      <workItem from="1602901167054" duration="8861000" />
+      <workItem from="1602986820810" duration="11788000" />
     </task>
+    <task id="LOCAL-00001" summary="add data">
+      <created>1602421098185</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1602421098185</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="add data" />
+    <option name="LAST_COMMIT_MESSAGE" value="add data" />
+  </component>
   <component name="WindowStateProjectService">
+    <state x="1205" y="401" key="#com.intellij.ide.util.MemberChooser" timestamp="1602922989562">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state x="1205" y="401" key="#com.intellij.ide.util.MemberChooser/0.0.2560.1400@0.0.2560.1400" timestamp="1602922989562" />
+    <state x="890" y="281" key="CommitChangelistDialog2" timestamp="1602421117549">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state x="890" y="281" key="CommitChangelistDialog2/0.0.2560.1400@0.0.2560.1400" timestamp="1602421117549" />
     <state x="1164" y="609" key="Github.ShareDialog" timestamp="1602420913308">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
@@ -169,13 +206,25 @@
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="1047" y="418" key="Github.UntrackedFilesDialog/0.0.2560.1400@0.0.2560.1400" timestamp="1602420929114" />
-    <state x="1109" y="635" key="NewPhpFileDialog" timestamp="1602415327250">
+    <state x="1307" y="432" key="NewPhpClassDialog" timestamp="1602920203703">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state x="1109" y="635" key="NewPhpFileDialog/0.0.2560.1400@0.0.2560.1400" timestamp="1602415327250" />
+    <state x="1307" y="432" key="NewPhpClassDialog/0.0.2560.1400@0.0.2560.1400" timestamp="1602920203703" />
+    <state x="1109" y="635" key="NewPhpFileDialog" timestamp="1602987690870">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state x="1109" y="635" key="NewPhpFileDialog/0.0.2560.1400@0.0.2560.1400" timestamp="1602987690870" />
+    <state x="884" y="445" key="Vcs.Push.Dialog.v2" timestamp="1602421099970">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state x="884" y="445" key="Vcs.Push.Dialog.v2/0.0.2560.1400@0.0.2560.1400" timestamp="1602421099970" />
     <state x="993" y="415" width="598" height="594" key="find.popup" timestamp="1602417030633">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="993" y="415" width="598" height="594" key="find.popup/0.0.2560.1400@0.0.2560.1400" timestamp="1602417030633" />
+    <state x="1066" y="397" width="672" height="678" key="search.everywhere.popup" timestamp="1602990694442">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state x="1066" y="397" width="672" height="678" key="search.everywhere.popup/0.0.2560.1400@0.0.2560.1400" timestamp="1602990694442" />
   </component>
 </project>
