@@ -1,0 +1,10 @@
+{
+    "Productid": "商品ID",
+    "Userid": "用户ID",
+    "ProductName": "商品名称",
+    "Unit": "计量单位",
+    "Price": "金额",
+    "Status": "状态",
+    "Created at": "创建时间",
+    "Updated at": "更新时间"
+}

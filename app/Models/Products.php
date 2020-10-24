@@ -2,8 +2,8 @@
 
 namespace App\Models;
 
-
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Products extends Model
 {
@@ -15,6 +15,4 @@ class Products extends Model
     public $table = 'products';
 
     public $primaryKey = 'productid';
-
-    public $timestamps = false;
 }

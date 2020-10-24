@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Contracts\Routing\ResponseFactory;
+use Illuminate\Support\MessageBag;
 
 if (!function_exists('json')) {
 
@@ -47,5 +48,61 @@ if (!function_exists('error')) {
             ];
 
         return $factory->make($content, 400);
+    }
+}
+
+if (!function_exists('backMessageBag')) {
+    /**
+     * 返回一个自定义的messageBag
+     * @param string $type
+     * @param string $title
+     * @param string $message
+     * @return \Illuminate\Http\RedirectResponse
+     */
+    function backMessageBag(string $type, string $title, string $message)
+    {
+        $msgBag = new MessageBag(compact('title', 'message'));
+        return back()->with([
+            $type => $msgBag
+        ]);
+    }
+}
+
+if (!function_exists('backSuccess')) {
+    /**
+     * 返回一个成功 messageBag
+     * @param string $title
+     * @param string $message
+     * @return \Illuminate\Http\RedirectResponse
+     */
+    function backSuccess(string $title, string $message)
+    {
+        return backMessageBag('success', $title, $message);
+    }
+}
+
+if (!function_exists('backWarning')) {
+    /**
+     * 返回一个警告 messageBag
+     * @param string $title
+     * @param string $message
+     * @return \Illuminate\Http\RedirectResponse
+     */
+    function backWarning(string $title, string $message)
+    {
+        return backMessageBag('warning', $title, $message);
+    }
+}
+
+if (!function_exists('backError')) {
+    /**
+     * 返回一个错误 messageBag
+     * @param string $title
+     * @param string $message
+     * @return \Illuminate\Http\RedirectResponse
+     */
+    function backError(string $title, string $message)
+    {
+        return backMessageBag('error', $title, $message);
     }
 }

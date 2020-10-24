@@ -7,7 +7,6 @@ use Illuminate\Database\Eloquent\Model;
 class Areas extends Model
 {
     public $table = 'areas';
-    public $primaryKey = 'areaid';
 
-    public $timestamps = false;
+    public $primaryKey = 'areaid';
 }
