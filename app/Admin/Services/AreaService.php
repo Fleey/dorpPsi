@@ -51,6 +51,7 @@ class AreaService
         }
 
         $areaModel->userid = $adminId;
+        $areaModel->status = Areas::AREA_STATUS_NORMAL;
 
         return null;
     }
@@ -115,7 +116,7 @@ class AreaService
 
         $ret = $selector->paginate(null, ['areaid as id', 'name as text', 'parentid']);
 
-        $ret = json_decode(json_encode($ret),true);
+        $ret = json_decode(json_encode($ret), true);
 
         return $this->formatSearchAreaData($ret);
     }
