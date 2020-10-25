@@ -36,7 +36,7 @@ class ProductController extends AdminController
 
         $grid->model()
             ->where('userid', Admin::user()->id)
-            ->where('status', '<>', Products::PRODUCT_STATUS_DELETE);;
+            ->where('status', '<>', Products::PRODUCT_STATUS_DELETE);
 
         $grid->column('productid', __('Productid'))->sortable();
         $grid->column('name', __('ProductName'));

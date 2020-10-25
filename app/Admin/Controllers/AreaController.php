@@ -4,18 +4,16 @@ namespace App\Admin\Controllers;
 
 use App\Admin\Services\AreaService;
 use App\Models\Areas;
-use Encore\Admin\Controllers\AdminController;
 use Encore\Admin\Controllers\HasResourceActions;
 use Encore\Admin\Facades\Admin;
 use Encore\Admin\Form;
-use Encore\Admin\Grid;
 use Encore\Admin\Layout\Column;
 use Encore\Admin\Layout\Content;
 use Encore\Admin\Layout\Row;
-use Encore\Admin\Show;
 use Encore\Admin\Tree;
 use Encore\Admin\Widgets\Box;
 use Illuminate\Http\RedirectResponse;
+use Illuminate\Http\Request;
 
 class AreaController extends Content
 {
@@ -63,7 +61,13 @@ class AreaController extends Content
      */
     protected function treeView()
     {
+
         return Areas::tree(function (Tree $tree) {
+
+            $tree->query(function ($model) {
+                return $model->where('userid', Admin::user()->id)->where('status', '<>', Areas::AREA_STATUS_DELETE);
+            });
+
             $tree->disableCreate(); // 关闭新增按钮
             $tree->branch(function ($branch) {
                 return "<strong>{$branch['name']}</strong>"; // 标题添加strong标签
@@ -117,5 +121,16 @@ class AreaController extends Content
         });
 
         return $form;
+    }
+
+    public function searchAreaInfo(AreaService $areaService)
+    {
+        $queryName = \request()->request->get('q');
+
+        $adminId = Admin::user()->id;
+
+        $ret = $areaService->selectSearchAreaInfo($adminId, $queryName);
+
+        return $ret;
     }
 }

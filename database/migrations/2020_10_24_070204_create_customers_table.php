@@ -37,9 +37,20 @@ class CreateCustomersTable extends Migration
                 ->nullable(false)->unsigned()
                 ->comment('地区id');
 
+            $table->string('address', 500)
+                ->nullable(false)
+                ->comment('客户地址');
+
+            $table->tinyInteger('status')
+                ->nullable(false)->unsigned()
+                ->comment('状态 0 初始化，1 正常，2 软删除');
+
             $table->timestamps();
 
             $table->index(['areaid'], 'INDEX_AREAID');
+            $table->index(['name'], 'INDEX_NAME');
+            $table->index(['phone'], 'INDEX_PHONE');
+            $table->index(['userid'], 'INDEX_USERID');
 
         });
 

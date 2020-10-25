@@ -10,16 +10,25 @@ class Areas extends Model
 {
     use ModelTree, AdminBuilder;
 
+    // 正常状态
+    const AREA_STATUS_NORMAL = 1;
+    // 软删除状态
+    const AREA_STATUS_DELETE = 2;
+
+    public $table = 'areas';
+
+    public $primaryKey = 'areaid';
+
     protected $fillable = ['parentid', 'name', 'sort'];
 
     protected $with = [
         'parent'
     ];
 
-    public $table = 'areas';
-
-    public $primaryKey = 'areaid';
-
+    /**
+     * Areas constructor.
+     * @param array $attributes
+     */
     public function __construct(array $attributes = [])
     {
         parent::__construct($attributes);
@@ -30,6 +39,7 @@ class Areas extends Model
         $this->setOrderColumn('sort');
         // 标题
         $this->setTitleColumn('name');
+
     }
 
 

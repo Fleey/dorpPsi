@@ -6,5 +6,7 @@
     "Price": "金额",
     "Status": "状态",
     "Created at": "创建时间",
-    "Updated at": "更新时间"
+    "Updated at": "更新时间",
+    "Customerid": "客户ID",
+    "Phone": "联系电话"
 }

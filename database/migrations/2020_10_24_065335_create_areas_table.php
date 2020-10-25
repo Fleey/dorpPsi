@@ -37,6 +37,10 @@ class CreateAreasTable extends Migration
                 ->nullable(false)
                 ->comment('地区名称');
 
+            $table->tinyInteger('status')
+                ->nullable(false)->unsigned()
+                ->comment('状态，0 初始值，1 正常，2 软删除');
+
             $table->timestamps();
 
             $table->unique(['userid', 'name'], 'UNIQUE_USERID_NAME');
