@@ -11,5 +11,6 @@
     "Phone": "联系电话",
     "Orderid": "订单ID",
     "Total amount": "总共金额",
-    "Remark": "备注"
+    "Remark": "备注",
+    "Total num": "总共数量"
 }

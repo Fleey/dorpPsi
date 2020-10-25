@@ -17,9 +17,11 @@ Route::group([
 
     $router->get('api/areas/search', 'AreaController@searchAreaInfo');
     $router->get('api/customer/search', 'CustomerController@searchCustomerInfo');
+    $router->get('api/product/search', 'ProductController@searchProductInfo');
 
     $router->resource('products', ProductController::class);
     $router->resource('areas', AreaController::class);
     $router->resource('orders', OrderController::class);
+    $router->resource('order_infos', OrderInfoController::class);
     $router->resource('customers', CustomerController::class);
 });

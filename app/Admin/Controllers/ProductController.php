@@ -116,4 +116,19 @@ class ProductController extends AdminController
         return parent::edit($id, $content);
     }
 
+    /**
+     * 查询商品信息
+     * @param ProductService $productService
+     * @return \Illuminate\Contracts\Pagination\LengthAwarePaginator
+     */
+    public function searchProductInfo(ProductService $productService)
+    {
+        $queryName = \request()->request->get('q','');
+
+        $adminId = Admin::user()->id;
+
+        $ret = $productService->searchProductInfo($adminId, $queryName);
+
+        return $ret;
+    }
 }

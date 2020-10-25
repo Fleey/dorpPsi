@@ -106,3 +106,18 @@ if (!function_exists('backError')) {
         return backMessageBag('error', $title, $message);
     }
 }
+if (!function_exists('toastrError')) {
+    /**
+     * 封建toastr错误返回信息
+     * @param string $message
+     * @return \Illuminate\Http\JsonResponse
+     */
+    function toastrError(string $message)
+    {
+        return response()->json([
+            'status'     => false,
+            'validation' => '',
+            'message'    => $message
+        ]);
+    }
+}

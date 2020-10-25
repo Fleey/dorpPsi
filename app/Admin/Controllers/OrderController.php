@@ -2,6 +2,7 @@
 
 namespace App\Admin\Controllers;
 
+use App\Admin\Actions\Post\AddProduct;
 use App\Admin\Services\AreaService;
 use App\Admin\Services\OrderService;
 use App\Models\Areas;
@@ -35,7 +36,7 @@ class OrderController extends AdminController
 
         $grid->column('orderid', __('Orderid'));
 
-        $grid->column('customer.name', '客户名称');
+        $grid->column('customers.name', '客户名称');
 
         $grid->column('status', '订单状态')->display(function ($value) {
             if ($value == 1)
@@ -68,6 +69,10 @@ class OrderController extends AdminController
             $filter->between('created_at', '创建时间')->datetime();
         });
 
+        $grid->actions(function ($actions) {
+            $actions->add(new AddProduct());
+        });
+
         return $grid;
     }
 
@@ -96,7 +101,9 @@ class OrderController extends AdminController
                 return '未知状态';
             }
         });
-        $show->field('total_amount', __('Total amount'));
+        $show->field('total_amount', __('Total amount'))->as(function ($value) {
+            return $value ? ($value / 100) : 0;
+        });
         $show->field('remark', __('Remark'));
         $show->field('created_at', __('Created at'));
         $show->field('updated_at', __('Updated at'));
@@ -135,7 +142,9 @@ class OrderController extends AdminController
 
         $form->textarea('remark', __('Remark'));
 
-        $form->text('total_amount', __('订单总金额'))->value('0 元')->disable();
+        $form->text('total_amount', __('订单总金额'))->value('0 元')->customFormat(function ($value) {
+            return $value ? ($value / 100) : 0;
+        })->disable();
 
         $form->saving(function (Form $form) {
             $orderService = new OrderService();
@@ -149,8 +158,10 @@ class OrderController extends AdminController
 
             $orderId = $form->model()->orderid;
 
+            session('editOrderId', $orderId);
+
             // 跳转页面
-            return redirect(admin_url('order_info?orderid=' . $orderId));
+            return redirect(admin_url('order_infos?orderid=' . $orderId));
         });
 
         return $form;

@@ -11,7 +11,7 @@ class Orders extends Model
 
     public $primaryKey = 'orderid';
 
-    public function customer()
+    public function customers()
     {
         return $this->hasOne(Customers::class,'customerid','customerid');
     }

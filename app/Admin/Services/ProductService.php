@@ -49,4 +49,32 @@ class ProductService
 
         $productsModel->status = Products::PRODUCT_STATUS_NORMAL;
     }
+
+    /**
+     * 查询商品信息
+     * @param int $userId
+     * @param string $searchName
+     * @return array|\Illuminate\Contracts\Pagination\LengthAwarePaginator
+     */
+    public function searchProductInfo(int $userId, string $searchName)
+    {
+        $productModel = new Products();
+        $selector     = $productModel->newQuery()->where('userid', $userId);
+
+        $selector = $selector->where('status', '<>', Products::PRODUCT_STATUS_DELETE);
+
+        $selector = $selector->where('name', 'like', '%' . $searchName . '%');
+
+        if ($searchName == '') {
+            $ret = $selector->limit(20)->get(['productid as id', 'name as text']);
+            if (is_null($ret))
+                return [];
+            else
+                $ret = $ret->toArray();
+        } else {
+            $ret = $selector->paginate(null, ['productid as id', 'name as text']);
+        }
+
+        return $ret;
+    }
 }
