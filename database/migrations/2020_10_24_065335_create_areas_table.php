@@ -29,13 +29,19 @@ class CreateAreasTable extends Migration
                 ->nullable(false)->unsigned()
                 ->comment('用户id');
 
-            $table->string('name', 32)
+            $table->tinyInteger('sort')
+                ->nullable(false)->unsigned()
+                ->comment('排序字段');
+
+            $table->string('name', 64)
                 ->nullable(false)
                 ->comment('地区名称');
 
             $table->timestamps();
 
+            $table->unique(['userid', 'name'], 'UNIQUE_USERID_NAME');
             $table->index(['userid'], 'INDEX_USERID');
+            $table->index(['sort'], 'INDEX_SORT');
         });
 
         DB::statement("ALTER TABLE `${tableName}` comment '地区表'");

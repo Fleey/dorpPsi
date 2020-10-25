@@ -44,7 +44,9 @@ class ProductService
 
         $productsModel = $form->model();
 
-        $productsModel->userid = $adminId;
+        if (!$form->isEditing())
+            $productsModel->userid = $adminId;
+
         $productsModel->status = Products::PRODUCT_STATUS_NORMAL;
     }
 }
