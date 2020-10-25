@@ -2,6 +2,8 @@
 
 namespace App\Admin\Controllers;
 
+use App\Admin\Services\AreaService;
+use App\Admin\Services\CustomerService;
 use App\Models\Areas;
 use App\Models\Customers;
 use Encore\Admin\Controllers\AdminController;
@@ -38,6 +40,12 @@ class CustomerController extends AdminController
         $grid->column('created_at', __('Created at'));
         $grid->column('updated_at', __('Updated at'));
 
+        $grid->filter(function ($filter) {
+            $filter->disableIdFilter();
+            $filter->like('name', '客户名称');
+            $filter->like('phone', '联系电话');
+        });
+
         return $grid;
     }
 
@@ -51,11 +59,19 @@ class CustomerController extends AdminController
     {
         $show = new Show(Customers::findOrFail($id));
 
-        $show->field('customerid', __('Customerid'));
-        $show->field('userid', __('Userid'));
-        $show->field('name', __('Name'));
+        $show->field('name', '客户名称');
         $show->field('phone', __('Phone'));
-        $show->field('areaid', __('Areaid'));
+        $show->field('areaid', '地区名称')->as(function ($value) {
+            $areaService = new AreaService();
+
+            $data = Areas::find($value);
+
+            if ($data) {
+                return $areaService->getAreaLinkStr($data->parentid, $data->name);
+            } else {
+                return '此地区已被删除';
+            }
+        });
         $show->field('created_at', __('Created at'));
         $show->field('updated_at', __('Updated at'));
 
@@ -71,19 +87,28 @@ class CustomerController extends AdminController
     {
         $form = new Form(new Customers());
 
-        $form->number('customerid', __('Customerid'));
-
         $form->text('name', '客户名称');
         $form->text('phone', __('Phone'));
-        $form->select('areaid', '地区名称')->options(function ($id){
-            $areas = Areas::find($id);
+        $form->select('areaid', '地区名称')->options(function ($id) {
+            $areaService = new AreaService();
 
-            if ($areas) {
-                return [$areas->areaid => $areas->name];
+            $data = Areas::find($id);
+
+            if ($data) {
+                return [
+                    $data->areaid => $areaService->getAreaLinkStr($data->parentid, $data->name)
+                ];
             }
         })->ajax('/admin/api/areas/search', 'id', 'text');
 
         $form->textarea('address', '客户地址')->placeholder('请输入 客户地址 最多500个字符');
+
+
+        $form->saving(function (Form $form) {
+            $customerService = new CustomerService();
+
+            return $customerService->updateCustomer(Admin::user()->id, $form);
+        });
 
         return $form;
     }
