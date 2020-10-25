@@ -37,25 +37,33 @@ class OrderInfoController extends AdminController
         $grid->model()->where('orderid', $orderId);
 
         $grid->column('product.name', '商品名称');
-        $grid->column('total_num', __('Total num'));
-        $grid->column('discount_price', '商品总金额')->display(function ($value) {
+        $grid->column('total_num', __('Total num'))->editable()->sortable();
+        $grid->column('discount_price', '商品总金额')->sortable()->display(function ($value) {
             return $value / 100;
-        });
+        })->editable();
         $grid->column('created_at', __('Created at'));
         $grid->column('updated_at', __('Updated at'));
 
+        $grid->disableCreateButton();
+        $grid->disableFilter();
 
         $grid->quickCreate(function (Grid\Tools\QuickCreate $create) {
             $create->select('productid', '商品名称')
-                ->options(admin_url('api/product/search'));
-//                ->ajax(admin_url('api/product/search'), 'id', 'text')
+                ->options(admin_url('api/product/search'))
+                ->ajax(admin_url('api/product/search'), 'id', 'text');
             $create->integer('total_num', '下单数量');
             $create->text('discount_price', '总计金额')->placeholder('请输入 总计金额 不填则自动计算');
 
         });
 
+        $grid->actions(function (Grid\Displayers\Actions $actions) {
+            $actions->disableView();
+            $actions->disableEdit();
+        });
+
         return $grid;
     }
+
 
     /**
      * Make a show builder.
@@ -100,6 +108,10 @@ class OrderInfoController extends AdminController
         });
 
         $form->saved(function (Form $form) use ($orderService, $orderId) {
+            $orderService->updateOrderTotalMoney($orderId);
+        });
+
+        $form->deleting(function (Form $form) use ($orderService, $orderId) {
             $orderService->updateOrderTotalMoney($orderId);
         });
 
