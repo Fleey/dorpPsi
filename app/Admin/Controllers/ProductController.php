@@ -38,10 +38,10 @@ class ProductController extends AdminController
             ->where('userid', Admin::user()->id)
             ->where('status', '<>', Products::PRODUCT_STATUS_DELETE);;
 
-        $grid->column('productid', __('Productid'));
+        $grid->column('productid', __('Productid'))->sortable();
         $grid->column('name', __('ProductName'));
         $grid->column('unit', __('Unit'));
-        $grid->column('price', __('Price'))->display(function ($value) {
+        $grid->column('price', __('Price'))->sortable()->display(function ($value) {
             return $value / 100;
         });
         $grid->column('created_at', __('Created at'));

@@ -2,26 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="67fa53d9-8c1a-4340-bf15-7f6fb464784e" name="Default Changelist" comment="update.save code">
-      <change afterPath="$PROJECT_DIR$/app/Admin/Controllers/OrderController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Admin/Services/ProductService.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Admin/Views/ProductView.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/migrations/2020_10_24_030710_create_products_table.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/migrations/2020_10_24_061841_create_orders_table.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/migrations/2020_10_24_063817_create_order_infos_table.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/migrations/2020_10_24_065335_create_areas_table.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/migrations/2020_10_24_070204_create_customers_table.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/lang/zh-CN.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Admin/Controllers/ProductController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Admin/Controllers/ProductController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Admin/Controllers/TestController.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Admin/routes.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Admin/routes.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Common/response.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Common/response.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Areas.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Areas.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Customers.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Customers.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/OrderInfo.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/OrderInfo.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Orders.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Orders.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Products.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Products.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -182,6 +164,7 @@
       <workItem from="1603160561684" duration="648000" />
       <workItem from="1603462188085" duration="634000" />
       <workItem from="1603506570136" duration="19665000" />
+      <workItem from="1603587902377" duration="37000" />
     </task>
     <task id="LOCAL-00001" summary="add data">
       <created>1602421098185</created>
