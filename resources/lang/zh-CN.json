@@ -8,5 +8,8 @@
     "Created at": "创建时间",
     "Updated at": "更新时间",
     "Customerid": "客户ID",
-    "Phone": "联系电话"
+    "Phone": "联系电话",
+    "Orderid": "订单ID",
+    "Total amount": "总共金额",
+    "Remark": "备注"
 }

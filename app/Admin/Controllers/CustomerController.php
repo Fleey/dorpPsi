@@ -42,6 +42,9 @@ class CustomerController extends AdminController
 
         $grid->filter(function ($filter) {
             $filter->disableIdFilter();
+
+            $filter->getModel()->where('userid', Admin::user()->id);
+
             $filter->like('name', '客户名称');
             $filter->like('phone', '联系电话');
         });
@@ -111,5 +114,21 @@ class CustomerController extends AdminController
         });
 
         return $form;
+    }
+
+    /**
+     * 查询客户信息
+     * @param CustomerService $customerService
+     * @return \Illuminate\Contracts\Pagination\LengthAwarePaginator
+     */
+    public function searchCustomerInfo(CustomerService $customerService)
+    {
+        $queryName = \request()->request->get('q');
+
+        $adminId = Admin::user()->id;
+
+        $ret = $customerService->searchCustomerInfo($adminId, $queryName);
+
+        return $ret;
     }
 }

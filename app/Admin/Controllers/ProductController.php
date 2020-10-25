@@ -49,6 +49,9 @@ class ProductController extends AdminController
 
         $grid->filter(function ($filter) {
             $filter->disableIdFilter();
+
+            $filter->getModel()->where('userid', Admin::user()->id);
+
             $filter->like('name', __('ProductName'));
         });
 

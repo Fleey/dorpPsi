@@ -4,6 +4,7 @@
 namespace App\Admin\Services;
 
 
+use App\Models\Customers;
 use Encore\Admin\Form;
 
 class CustomerService
@@ -41,5 +42,26 @@ class CustomerService
         $model->userid = $userId;
 
         return null;
+    }
+
+    /**
+     * 查询客户信息
+     * @param int $userId
+     * @param string $searchName
+     * @return \Illuminate\Contracts\Pagination\LengthAwarePaginator
+     */
+    public function searchCustomerInfo(int $userId, string $searchName)
+    {
+        $customerModel = new Customers();
+        $selector      = $customerModel->newQuery()->where('userid', $userId);
+
+        $selector = $selector->where('status', '<>', Customers::CUSTOMER_STATUS_DELETE);
+
+        $selector = $selector->where('name', 'like', '%' . $searchName . '%');
+
+        $ret = $selector->paginate(null,['customerid as id', 'name as text']);
+
+
+        return $ret;
     }
 }

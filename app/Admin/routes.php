@@ -16,6 +16,7 @@ Route::group([
     $router->get('/', 'HomeController@index')->name('home');
 
     $router->get('api/areas/search', 'AreaController@searchAreaInfo');
+    $router->get('api/customer/search', 'CustomerController@searchCustomerInfo');
 
     $router->resource('products', ProductController::class);
     $router->resource('areas', AreaController::class);

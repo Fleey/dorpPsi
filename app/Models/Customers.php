@@ -14,4 +14,9 @@ class Customers extends Model
     public $table = 'customers';
 
     public $primaryKey = 'customerid';
+
+    public function orders()
+    {
+        return $this->belongsTo(Orders::class);
+    }
 }
