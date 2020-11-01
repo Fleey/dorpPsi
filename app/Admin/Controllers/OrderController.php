@@ -3,17 +3,15 @@
 namespace App\Admin\Controllers;
 
 use App\Admin\Actions\Post\AddProduct;
-use App\Admin\Services\AreaService;
 use App\Admin\Services\OrderService;
-use App\Models\Areas;
 use App\Models\Customers;
 use App\Models\Orders;
 use Encore\Admin\Controllers\AdminController;
 use Encore\Admin\Facades\Admin;
 use Encore\Admin\Form;
 use Encore\Admin\Grid;
+use Encore\Admin\Layout\Content;
 use Encore\Admin\Show;
-use Illuminate\Support\Facades\DB;
 
 class OrderController extends AdminController
 {
@@ -109,6 +107,20 @@ class OrderController extends AdminController
         $show->field('updated_at', __('Updated at'));
 
         return $show;
+    }
+
+    /**
+     * 创建订单页面
+     * @param Content $content
+     * @return Content
+     */
+    public function create(Content $content)
+    {
+        Admin::js('/js/Order/CreateOrderPage.js');
+        return $content
+            ->title('创建订单')
+            ->description('创建')
+            ->body(view('Order/CreateOrderPage'));
     }
 
     /**

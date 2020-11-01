@@ -18,9 +18,8 @@
  *
  */
 
-use Encore\Admin\Facades\Admin;
-
 Encore\Admin\Form::forget(['map', 'editor']);
 
-Admin::css('https://unpkg.com/element-ui/lib/theme-chalk/index.css');
-Admin::js('https://unpkg.com/element-ui/lib/index.js');
+\Encore\Admin\Admin::css('https://unpkg.com/element-ui/lib/theme-chalk/index.css');
+\Encore\Admin\Admin::js('https://unpkg.com/vue/dist/vue.js');
+\Encore\Admin\Admin::js('https://unpkg.com/element-ui/lib/index.js');
