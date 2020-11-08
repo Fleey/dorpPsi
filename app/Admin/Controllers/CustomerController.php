@@ -123,7 +123,10 @@ class CustomerController extends AdminController
      */
     public function searchCustomerInfo(CustomerService $customerService)
     {
-        $queryName = \request()->request->get('q');
+        $queryName = \request()->request->get('q','');
+
+        if (empty($queryName))
+            $queryName = '';
 
         $adminId = Admin::user()->id;
 

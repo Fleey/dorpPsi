@@ -8,7 +8,7 @@ use Illuminate\Support\Facades\Session;
 
 class AddProduct extends RowAction
 {
-    public $name = '添加商品';
+    public $name = '查看详细';
 
     public function handle(Model $model)
     {

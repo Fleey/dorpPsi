@@ -4,12 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="67fa53d9-8c1a-4340-bf15-7f6fb464784e" name="Default Changelist" comment="fix.修复无法新增地区bug">
-      <change afterPath="$PROJECT_DIR$/public/js/Order/CreateOrderPage.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/Order/CreateOrderPage.php" afterDir="false" />
+    <list default="true" id="67fa53d9-8c1a-4340-bf15-7f6fb464784e" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/app/Console/Commands/TestCommand.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Admin/Actions/Post/AddProduct.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Admin/Actions/Post/AddProduct.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Admin/Controllers/CustomerController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Admin/Controllers/CustomerController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Admin/Controllers/OrderController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Admin/Controllers/OrderController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Admin/bootstrap.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Admin/bootstrap.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/Order/CreateOrderPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/Order/CreateOrderPage.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/Order/CreateOrderPage.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Order/CreateOrderPage.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -143,20 +146,23 @@
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/app/Admin/Controllers" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/app/Console/Commands" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="php.override.implement.member.chooser.php.doc" value="NONE" />
-    <property name="settings.editor.selected.configurable" value="vcs.Git" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="D:\www\dorpPsi\public\js" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\www\dorpPsi\app\Console\Commands" />
       <recent name="D:\www\dorpPsi\app\Admin\Controllers" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\www\dorpPsi\app\Console" />
+      <recent name="D:\www\dorpPsi\app\Console\Commands" />
+      <recent name="D:\www\dorpPsi\public\js" />
     </key>
   </component>
   <component name="RunManager">
@@ -183,7 +189,10 @@
       <workItem from="1603587902377" duration="33983000" />
       <workItem from="1603634047680" duration="215000" />
       <workItem from="1604108773517" duration="636000" />
-      <workItem from="1604212984097" duration="5447000" />
+      <workItem from="1604212984097" duration="5472000" />
+      <workItem from="1604802818464" duration="3204000" />
+      <workItem from="1604818574745" duration="161000" />
+      <workItem from="1604818746154" duration="11894000" />
     </task>
     <task id="LOCAL-00001" summary="add data">
       <created>1602421098185</created>
@@ -262,7 +271,14 @@
       <option name="project" value="LOCAL" />
       <updated>1604213792188</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="update.save code">
+      <created>1604233530841</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1604233530841</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -271,7 +287,6 @@
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="add data" />
-    <MESSAGE value="update.save code" />
     <MESSAGE value="update.order sort" />
     <MESSAGE value="add.新增地区功能" />
     <MESSAGE value="update.code save" />
@@ -280,13 +295,18 @@
     <MESSAGE value="update.项目大体完成" />
     <MESSAGE value="fix.修复无法新增地区bug" />
     <MESSAGE value="update.bootstrap.php" />
-    <option name="LAST_COMMIT_MESSAGE" value="update.bootstrap.php" />
+    <MESSAGE value="update.save code" />
+    <option name="LAST_COMMIT_MESSAGE" value="update.save code" />
   </component>
   <component name="WindowStateProjectService">
     <state x="884" y="370" key="#Deployment" timestamp="1604213775632">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="884" y="370" key="#Deployment/0.0.2560.1400@0.0.2560.1400" timestamp="1604213775632" />
+    <state x="1014" y="386" key="#HTTP_Proxy" timestamp="1604818693757">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state x="1014" y="386" key="#HTTP_Proxy/0.0.2560.1400@0.0.2560.1400" timestamp="1604818693757" />
     <state x="1205" y="401" key="#com.intellij.ide.util.MemberChooser" timestamp="1603632046932">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
@@ -299,10 +319,10 @@
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="1022" y="467" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.2560.1400@0.0.2560.1400" timestamp="1603625150561" />
-    <state x="890" y="281" key="CommitChangelistDialog2" timestamp="1604213791289">
+    <state x="890" y="281" key="CommitChangelistDialog2" timestamp="1604233530090">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state x="890" y="281" key="CommitChangelistDialog2/0.0.2560.1400@0.0.2560.1400" timestamp="1604213791289" />
+    <state x="890" y="281" key="CommitChangelistDialog2/0.0.2560.1400@0.0.2560.1400" timestamp="1604233530090" />
     <state x="267" y="225" width="2051" height="975" key="DiffContextDialog" timestamp="1604213752242">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
@@ -315,22 +335,26 @@
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="1047" y="418" key="Github.UntrackedFilesDialog/0.0.2560.1400@0.0.2560.1400" timestamp="1602420929114" />
-    <state x="1307" y="432" key="NewPhpClassDialog" timestamp="1603623236076">
+    <state x="1307" y="432" key="NewPhpClassDialog" timestamp="1604822321575">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state x="1307" y="432" key="NewPhpClassDialog/0.0.2560.1400@0.0.2560.1400" timestamp="1603623236076" />
+    <state x="1307" y="432" key="NewPhpClassDialog/0.0.2560.1400@0.0.2560.1400" timestamp="1604822321575" />
     <state x="1109" y="635" key="NewPhpFileDialog" timestamp="1604214199924">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="1109" y="635" key="NewPhpFileDialog/0.0.2560.1400@0.0.2560.1400" timestamp="1604214199924" />
-    <state x="1080" y="370" key="RollbackChangesDialog" timestamp="1604215147999">
+    <state x="1080" y="370" key="RollbackChangesDialog" timestamp="1604824568347">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state x="1080" y="370" key="RollbackChangesDialog/0.0.2560.1400@0.0.2560.1400" timestamp="1604215147999" />
-    <state x="884" y="445" key="Vcs.Push.Dialog.v2" timestamp="1604213793263">
+    <state x="1080" y="370" key="RollbackChangesDialog/0.0.2560.1400@0.0.2560.1400" timestamp="1604824568347" />
+    <state x="744" y="313" key="SettingsEditor" timestamp="1604818797905">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state x="884" y="445" key="Vcs.Push.Dialog.v2/0.0.2560.1400@0.0.2560.1400" timestamp="1604213793263" />
+    <state x="744" y="313" key="SettingsEditor/0.0.2560.1400@0.0.2560.1400" timestamp="1604818797905" />
+    <state x="884" y="445" key="Vcs.Push.Dialog.v2" timestamp="1604233532151">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state x="884" y="445" key="Vcs.Push.Dialog.v2/0.0.2560.1400@0.0.2560.1400" timestamp="1604233532151" />
     <state x="267" y="225" width="2051" height="975" key="com.intellij.history.integration.ui.views.DirectoryHistoryDialog" timestamp="1603519920331">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
@@ -343,13 +367,13 @@
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="1096" y="625" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.2560.1400@0.0.2560.1400" timestamp="1604213055746" />
-    <state x="993" y="415" width="656" height="594" key="find.popup" timestamp="1603625248710">
+    <state x="993" y="415" width="656" height="594" key="find.popup" timestamp="1604824650013">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state x="993" y="415" width="656" height="594" key="find.popup/0.0.2560.1400@0.0.2560.1400" timestamp="1603625248710" />
-    <state x="1066" y="397" width="672" height="678" key="search.everywhere.popup" timestamp="1603628976116">
+    <state x="993" y="415" width="656" height="594" key="find.popup/0.0.2560.1400@0.0.2560.1400" timestamp="1604824650013" />
+    <state x="1066" y="397" width="672" height="678" key="search.everywhere.popup" timestamp="1604835078451">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state x="1066" y="397" width="672" height="678" key="search.everywhere.popup/0.0.2560.1400@0.0.2560.1400" timestamp="1603628976116" />
+    <state x="1066" y="397" width="672" height="678" key="search.everywhere.popup/0.0.2560.1400@0.0.2560.1400" timestamp="1604835078451" />
   </component>
 </project>

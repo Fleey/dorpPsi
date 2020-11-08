@@ -69,6 +69,12 @@ class OrderController extends AdminController
 
         $grid->actions(function ($actions) {
             $actions->add(new AddProduct());
+
+            // 去掉编辑
+            $actions->disableEdit();
+
+            // 去掉查看
+            $actions->disableView();
         });
 
         return $grid;
