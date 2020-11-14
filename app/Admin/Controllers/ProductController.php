@@ -123,9 +123,12 @@ class ProductController extends AdminController
      */
     public function searchProductInfo(ProductService $productService)
     {
-        $queryName = \request()->request->get('q','');
+        $queryName = \request()->request->get('q');
 
         $adminId = Admin::user()->id;
+
+        if (empty($queryName))
+            $queryName = '';
 
         $ret = $productService->searchProductInfo($adminId, $queryName);
 

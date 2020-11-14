@@ -5,12 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="67fa53d9-8c1a-4340-bf15-7f6fb464784e" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/app/Console/Commands/TestCommand.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dorpPsi.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dorpPsi.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Admin/Actions/Post/AddProduct.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Admin/Actions/Post/AddProduct.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Admin/Controllers/CustomerController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Admin/Controllers/CustomerController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Admin/Controllers/OrderController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Admin/Controllers/OrderController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Admin/bootstrap.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Admin/bootstrap.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Admin/Controllers/ProductController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Admin/Controllers/ProductController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Admin/Services/ProductService.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Admin/Services/ProductService.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/js/Order/CreateOrderPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/Order/CreateOrderPage.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/Order/CreateOrderPage.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Order/CreateOrderPage.php" afterDir="false" />
     </list>
@@ -33,6 +33,9 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="ROOT_SYNC" value="DONT_SYNC" />
+  </component>
+  <component name="GitToolBoxStore">
+    <option name="projectConfigVersion" value="2" />
   </component>
   <component name="PhpWorkspaceProjectConfiguration">
     <include_path>
@@ -106,7 +109,6 @@
       <path value="$PROJECT_DIR$/vendor/sebastian/code-unit-reverse-lookup" />
       <path value="$PROJECT_DIR$/vendor/laravel/framework" />
       <path value="$PROJECT_DIR$/vendor/symfony/routing" />
-      <path value="$PROJECT_DIR$/vendor/symfony/polyfill-php70" />
       <path value="$PROJECT_DIR$/vendor/symfony/process" />
       <path value="$PROJECT_DIR$/vendor/symfony/mime" />
       <path value="$PROJECT_DIR$/vendor/symfony/polyfill-intl-normalizer" />
@@ -193,6 +195,7 @@
       <workItem from="1604802818464" duration="3204000" />
       <workItem from="1604818574745" duration="161000" />
       <workItem from="1604818746154" duration="11894000" />
+      <workItem from="1605323436089" duration="4483000" />
     </task>
     <task id="LOCAL-00001" summary="add data">
       <created>1602421098185</created>

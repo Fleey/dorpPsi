@@ -65,15 +65,7 @@ class ProductService
 
         $selector = $selector->where('name', 'like', '%' . $searchName . '%');
 
-        if ($searchName == '') {
-            $ret = $selector->limit(20)->get(['productid as id', 'name as text']);
-            if (is_null($ret))
-                return [];
-            else
-                $ret = $ret->toArray();
-        } else {
-            $ret = $selector->paginate(null, ['productid as id', 'name as text']);
-        }
+        $ret = $selector->paginate(20, ['productid as id', 'name as text', 'price']);
 
         return $ret;
     }
