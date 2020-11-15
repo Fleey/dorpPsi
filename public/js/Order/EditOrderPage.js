@@ -4,12 +4,37 @@ new Vue({
         return {
             isQuickCreate: false,
             isEditCustomerInfo: false,
+            orderid: 0,
             customerInfo: {
                 customerid: 0,
                 name: '',
                 phone: ''
             }
         }
+    },
+    created: function () {
+        orderData = JSON.parse(orderData);
+
+        this.customerInfo = {
+            customerid: orderData['customerInfo']['customerid'],
+            name: orderData['customerInfo']['name'] + ' (' + orderData['customerInfo']['address'] + ' )',
+            phone: orderData['customerInfo']['phone']
+        };
+
+        $.each(orderData['productList'], function (key, value) {
+            addOrderInfo(value['name'], value['productid'],
+                Number(((value['discount_price'] / value['total_num']) / 100).toString().match(/^\d+(?:\.\d{0,2})?/)), value['total_num'], value['discount_price'] / 100, value['desc']);
+        });
+
+
+        this.orderid = orderData['orderid'];
+
+        setTimeout(function () {
+            $('a[data-type="delete"]').click(deleteOrderInfoRowEvent);
+            $('a[data-type="edit"]').click(editOrderInfoRowEvent);
+        }, 200);
+
+        calcTableData();
     },
     methods: {
         cancelSave() {
@@ -207,7 +232,7 @@ new Vue({
                 });
             });
 
-            $.post('/admin/api/order/create', requestData, function (ret) {
+            $.post('/admin/api/order/' + this.orderid, requestData, function (ret) {
                 alert(ret['msg'])
                 if (ret['status'] === false) {
                     return;
@@ -292,11 +317,13 @@ function addOrderInfo(productName, productId, productPrice, productCount, discou
     let trDom = $(document.createElement('tr'));
 
     let editButtonDom = $(document.createElement('a')).attr({
-        'href': 'javascript:void(0);'
+        'href': 'javascript:void(0);',
+        'data-type': 'edit'
     }).text('编辑').bind('click', editOrderInfoRowEvent);
 
     let deleteButtonDom = $(document.createElement('a')).attr({
-        'href': 'javascript:void(0);'
+        'href': 'javascript:void(0);',
+        'data-type': 'delete'
     }).css({
         'margin-left': '10px'
     }).text('删除').bind('click', deleteOrderInfoRowEvent);

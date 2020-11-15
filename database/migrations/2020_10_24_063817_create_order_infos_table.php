@@ -37,9 +37,13 @@ class CreateOrderInfosTable extends Migration
                 ->nullable(false)->unsigned()
                 ->comment('折扣价格 单位分');
 
+            $table->string('desc')
+                ->default('')
+                ->comment('描述信息');
+
             $table->timestamps();
 
-            $table->index(['productid'],'INDEX_PRODUCTID');
+            $table->index(['productid'], 'INDEX_PRODUCTID');
         });
 
         DB::statement("ALTER TABLE `${tableName}` comment '订单详细表'");

@@ -1,8 +1,8 @@
 <?php
-if(isset($_GET['_pjax']))
+if (isset($_GET['_pjax']))
     echo '<script>location.reload()</script>';
-
-echo '<script>var csrfToken = "'.$csrfToken.'"</script>';
+echo '<script>var orderData = \'' . json_encode(["productList" => $productList, "customerInfo" => $customerInfo, "customerid" => $customerid, 'orderid' => $orderid]) . '\'</script>';
+echo '<script>var csrfToken = "' . $csrfToken . '"</script>';
 ?>
 
 <div class="box box-info createOrderPage">

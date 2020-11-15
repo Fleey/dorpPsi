@@ -3,12 +3,17 @@
 namespace App\Admin\Controllers;
 
 use App\Admin\Services\OrderService;
+use App\Models\Customers;
 use App\Models\OrderInfo;
+use App\Models\Orders;
+use App\Models\Products;
 use Encore\Admin\Controllers\AdminController;
 use Encore\Admin\Facades\Admin;
 use Encore\Admin\Form;
 use Encore\Admin\Grid;
+use Encore\Admin\Layout\Content;
 use Encore\Admin\Show;
+use Illuminate\Support\Facades\DB;
 
 class OrderInfoController extends AdminController
 {
@@ -116,5 +121,60 @@ class OrderInfoController extends AdminController
         });
 
         return $form;
+    }
+
+    public function editOrderInfoPage(int $orderId, Content $content)
+    {
+        $customerid = Orders::query()->where('orderid', $orderId)->value('customerid');
+
+        if (is_null($customerid))
+            return $content->withError('发生错误', '订单不存在');
+
+        $returnData = [
+            'customerid' => $customerid,
+            'orderid'    => $orderId
+        ];
+
+        $customerInfo = Customers::query()->where('customerid', $customerid)->first(['customerid','name', 'phone', 'address']);
+
+        if (is_null($customerInfo)) {
+            $returnData['customerInfo'] = [
+                'address' => '未知',
+                'phone'   => '未知',
+                'name'    => '未知'
+            ];
+        } else {
+            $returnData['customerInfo'] = $customerInfo->toArray();
+        }
+
+
+        $orderInfoModel = new OrderInfo();
+        $productModel   = new Products();
+
+        $productListInfo = OrderInfo::query()->from(DB::raw($orderInfoModel->getTable() . ' as oi'))
+            ->leftJoin(DB::raw($productModel->getTable() . ' p'), 'p.productid', 'oi.productid')
+            ->where('orderid', $orderId)->get([
+                'p.name',
+                'p.productid',
+                'oi.desc',
+                'oi.total_num',
+                'oi.discount_price'
+            ]);
+
+        if (!is_null($productListInfo))
+            $productListInfo = $productListInfo->toArray();
+        else
+            $productListInfo = [];
+
+        $returnData['productList'] = $productListInfo;
+
+        $returnData['csrfToken'] = csrf_token();
+
+        Admin::js('/js/Order/EditOrderPage.js');
+
+        return $content
+            ->title('编辑订单')
+            ->description('编辑')
+            ->body(view('Order/EditOrderPage', $returnData));
     }
 }

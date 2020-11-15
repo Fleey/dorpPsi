@@ -37,9 +37,9 @@ class CreateOrdersTable extends Migration
                 ->nullable(false)->unsigned()
                 ->comment('总共订单金额（可自定义） 单位分');
 
-            $table->string('remark', 500)
-                ->default('')
-                ->comment('备注信息');
+//            $table->string('remark', 500)
+//                ->default('')
+//                ->comment('备注信息');
 
             $table->index(['userid'],'INDEX_USERID','btree');
             $table->index(['customerid'],'INDEX_CUSTOMERID','btree');

@@ -59,7 +59,7 @@ class CustomerService
 
         $selector = $selector->where('name', 'like', '%' . $searchName . '%');
 
-        $ret = $selector->paginate(null,['customerid as id', 'name as text']);
+        $ret = $selector->paginate(null, ['customerid as id', 'name as text', 'address', 'phone']);
 
 
         return $ret;

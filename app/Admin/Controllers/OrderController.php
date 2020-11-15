@@ -3,6 +3,8 @@
 namespace App\Admin\Controllers;
 
 use App\Admin\Actions\Post\AddProduct;
+use App\Admin\Actions\Post\ChangeOrderStatus;
+use App\Admin\Actions\Post\EditOrderInfo;
 use App\Admin\Services\OrderService;
 use App\Models\Customers;
 use App\Models\Orders;
@@ -68,7 +70,9 @@ class OrderController extends AdminController
         });
 
         $grid->actions(function ($actions) {
-            $actions->add(new AddProduct());
+            $actions->add(new ChangeOrderStatus());
+
+            $actions->add(new EditOrderInfo());
 
             // 去掉编辑
             $actions->disableEdit();
@@ -126,7 +130,69 @@ class OrderController extends AdminController
         return $content
             ->title('创建订单')
             ->description('创建')
-            ->body(view('Order/CreateOrderPage'));
+            ->body(view('Order/CreateOrderPage', [
+                'csrfToken' => csrf_token()
+            ]));
+    }
+
+    public function createOrder(OrderService $orderService)
+    {
+        $request = request();
+
+        $customerid  = $request->post('customerid');
+        $productList = $request->post('productList');
+
+        if (empty($customerid))
+            return response()->json(['status' => false, 'msg' => '必须选择客户信息']);
+        if (!is_array($productList))
+            return response()->json(['status' => false, 'msg' => '商品列表格式不正确']);
+        if (count($productList) <= 0)
+            return response()->json(['status' => false, 'msg' => '订单商品数量不能为空']);
+
+        foreach ($productList as $content) {
+            if (empty($content['price']))
+                return response()->json(['status' => false, 'msg' => '商品价格不能为零']);
+            if (empty($content['discountPrice']))
+                return response()->json(['status' => false, 'msg' => '商品总金额不能为空']);
+            if (empty($content['count']))
+                return response()->json(['status' => false, 'msg' => '商品数量不能为空']);
+            if (empty($content['productid']))
+                return response()->json(['status' => false, 'msg' => '商品必须选择']);
+        }
+
+        $orderService->createOrderInfo($customerid, $productList);
+
+        return response()->json(['status' => true, 'msg' => '创建成功']);
+    }
+
+    public function updateOrderInfo(int $orderid, OrderService $orderService)
+    {
+        $request = request();
+
+        $customerid  = $request->post('customerid');
+        $productList = $request->post('productList');
+
+        if (empty($customerid))
+            return response()->json(['status' => false, 'msg' => '必须选择客户信息']);
+        if (!is_array($productList))
+            return response()->json(['status' => false, 'msg' => '商品列表格式不正确']);
+        if (count($productList) <= 0)
+            return response()->json(['status' => false, 'msg' => '订单商品数量不能为空']);
+
+        foreach ($productList as $content) {
+            if (empty($content['price']))
+                return response()->json(['status' => false, 'msg' => '商品价格不能为零']);
+            if (empty($content['discountPrice']))
+                return response()->json(['status' => false, 'msg' => '商品总金额不能为空']);
+            if (empty($content['count']))
+                return response()->json(['status' => false, 'msg' => '商品数量不能为空']);
+            if (empty($content['productid']))
+                return response()->json(['status' => false, 'msg' => '商品必须选择']);
+        }
+
+        $orderService->updateOrderInfo($orderid,$customerid, $productList);
+
+        return response()->json(['status' => true, 'msg' => '修改成功']);
     }
 
     /**

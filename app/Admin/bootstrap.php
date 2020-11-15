@@ -26,4 +26,4 @@ Encore\Admin\Form::forget(['map', 'editor']);
 \Encore\Admin\Admin::js('https://unpkg.com/vue/dist/vue.js');
 \Encore\Admin\Admin::js('https://unpkg.com/element-ui/lib/index.js');
 
-Admin::disablePjax();
+//Admin::disablePjax();
