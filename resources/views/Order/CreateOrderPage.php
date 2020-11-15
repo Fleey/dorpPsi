@@ -1,27 +1,33 @@
 <?php
-if(isset($_GET['_pjax']))
+if (isset($_GET['_pjax']))
     echo '<script>location.reload()</script>';
 
-echo '<script>var csrfToken = "'.$csrfToken.'"</script>';
+echo '<script>var csrfToken = "' . $csrfToken . '"</script>';
 ?>
 
 <div class="box box-info createOrderPage">
     <div class="box-header with-border">
-        <h3 class="box-title" v-if="!isEditCustomerInfo" @dblclick="editCustomerInfoEvent">
+        <div style="float: left;">
+            <h3 class="box-title" v-if="!isEditCustomerInfo" @dblclick="editCustomerInfoEvent">
 
-            <div v-if="customerInfo.customerid == 0">
-                客户名称 <span style="font-size: 12px;color:#000000;">(双击编辑)</span>
+                <div v-if="customerInfo.customerid == 0">
+                    客户名称 <span style="font-size: 12px;color:#000000;">(双击编辑)</span>
+                </div>
+                <div style="font-size: 14px;" v-else>
+
+                    联系电话：{{customerInfo.phone}}
+
+                    <br>
+                    客户信息：{{customerInfo.name}}
+                </div>
+            </h3>
+            <div v-if="isEditCustomerInfo">
+                <select name="customerInfo" style="width: 300px;"></select>
             </div>
-            <div style="font-size: 14px;" v-else>
-
-                联系电话：{{customerInfo.phone}}
-
-                <br>
-                客户信息：{{customerInfo.name}}
-            </div>
-        </h3>
-        <div v-if="isEditCustomerInfo">
-            <select name="customerInfo" style="width: 300px;"></select>
+        </div>
+        <div style="float: right;">
+            开单时间：
+            <input type="date" id="createTime">
         </div>
     </div>
     <!-- /.box-header -->

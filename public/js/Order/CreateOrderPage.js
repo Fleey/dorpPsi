@@ -11,6 +11,15 @@ new Vue({
             }
         }
     },
+    created: function () {
+        setTimeout(function () {
+            let time = new Date();
+            let day = ("0" + time.getDate()).slice(-2);
+            let month = ("0" + (time.getMonth() + 1)).slice(-2);
+            let today = time.getFullYear() + "-" + (month) + "-" + (day);
+            $('#createTime').val(today);
+        }, 200);
+    },
     methods: {
         cancelSave() {
             history.go(-1);
@@ -186,6 +195,7 @@ new Vue({
             let requestData = {
                 _token: csrfToken,
                 customerid: this.customerInfo.customerid,
+                createTime: $('#createTime').val(),
                 productList: []
             };
 

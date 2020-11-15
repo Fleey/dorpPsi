@@ -141,6 +141,7 @@ class OrderController extends AdminController
 
         $customerid  = $request->post('customerid');
         $productList = $request->post('productList');
+        $createTime  = $request->post('createTimel');
 
         if (empty($customerid))
             return response()->json(['status' => false, 'msg' => '必须选择客户信息']);
@@ -148,6 +149,11 @@ class OrderController extends AdminController
             return response()->json(['status' => false, 'msg' => '商品列表格式不正确']);
         if (count($productList) <= 0)
             return response()->json(['status' => false, 'msg' => '订单商品数量不能为空']);
+
+        if (empty($createTime))
+            $createTime = time();
+        else
+            $createTime = strtotime($createTime);
 
         foreach ($productList as $content) {
             if (empty($content['price']))
@@ -160,7 +166,7 @@ class OrderController extends AdminController
                 return response()->json(['status' => false, 'msg' => '商品必须选择']);
         }
 
-        $orderService->createOrderInfo($customerid, $productList);
+        $orderService->createOrderInfo($customerid, $productList, $createTime);
 
         return response()->json(['status' => true, 'msg' => '创建成功']);
     }
@@ -190,7 +196,7 @@ class OrderController extends AdminController
                 return response()->json(['status' => false, 'msg' => '商品必须选择']);
         }
 
-        $orderService->updateOrderInfo($orderid,$customerid, $productList);
+        $orderService->updateOrderInfo($orderid, $customerid, $productList);
 
         return response()->json(['status' => true, 'msg' => '修改成功']);
     }

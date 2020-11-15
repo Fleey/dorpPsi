@@ -5,20 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="67fa53d9-8c1a-4340-bf15-7f6fb464784e" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/app/Admin/Actions/Post/ChangeOrderStatus.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Admin/Actions/Post/EditOrderInfo.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/js/Order/EditOrderPage.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/Order/EditOrderPage.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dorpPsi.zip" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Admin/Actions/Post/AddProduct.php" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Admin/Controllers/OrderController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Admin/Controllers/OrderController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Admin/Controllers/OrderInfoController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Admin/Controllers/OrderInfoController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Admin/Services/CustomerService.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Admin/Services/CustomerService.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Admin/Services/OrderService.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Admin/Services/OrderService.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Admin/bootstrap.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Admin/bootstrap.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Admin/routes.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Admin/routes.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2020_10_24_061841_create_orders_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_10_24_061841_create_orders_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2020_10_24_063817_create_order_infos_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_10_24_063817_create_order_infos_table.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/js/Order/CreateOrderPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/Order/CreateOrderPage.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/Order/CreateOrderPage.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Order/CreateOrderPage.php" afterDir="false" />
     </list>
@@ -206,7 +196,8 @@
       <workItem from="1605339636368" duration="11000" />
       <workItem from="1605339708355" duration="6361000" />
       <workItem from="1605356175327" duration="2984000" />
-      <workItem from="1605404522223" duration="16692000" />
+      <workItem from="1605404522223" duration="17389000" />
+      <workItem from="1605446445416" duration="760000" />
     </task>
     <task id="LOCAL-00001" summary="add data">
       <created>1602421098185</created>
@@ -299,7 +290,14 @@
       <option name="project" value="LOCAL" />
       <updated>1605347204880</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="update.save code">
+      <created>1605444290673</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1605444290673</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -340,10 +338,10 @@
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="1022" y="467" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.2560.1400@0.0.2560.1400" timestamp="1605421515811" />
-    <state x="890" y="281" key="CommitChangelistDialog2" timestamp="1605347204033">
+    <state x="890" y="281" key="CommitChangelistDialog2" timestamp="1605444289517">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state x="890" y="281" key="CommitChangelistDialog2/0.0.2560.1400@0.0.2560.1400" timestamp="1605347204033" />
+    <state x="890" y="281" key="CommitChangelistDialog2/0.0.2560.1400@0.0.2560.1400" timestamp="1605444289517" />
     <state x="267" y="225" width="2051" height="975" key="DiffContextDialog" timestamp="1604213752242">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
@@ -372,10 +370,10 @@
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="744" y="313" key="SettingsEditor/0.0.2560.1400@0.0.2560.1400" timestamp="1604818797905" />
-    <state x="884" y="445" key="Vcs.Push.Dialog.v2" timestamp="1605347206377">
+    <state x="884" y="445" key="Vcs.Push.Dialog.v2" timestamp="1605444293037">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state x="884" y="445" key="Vcs.Push.Dialog.v2/0.0.2560.1400@0.0.2560.1400" timestamp="1605347206377" />
+    <state x="884" y="445" key="Vcs.Push.Dialog.v2/0.0.2560.1400@0.0.2560.1400" timestamp="1605444293037" />
     <state x="267" y="225" width="2051" height="975" key="com.intellij.history.integration.ui.views.DirectoryHistoryDialog" timestamp="1603519920331">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
@@ -384,17 +382,17 @@
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="267" y="225" width="2051" height="975" key="com.intellij.history.integration.ui.views.FileHistoryDialog/0.0.2560.1400@0.0.2560.1400" timestamp="1603633173674" />
-    <state x="1096" y="625" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1605339716057">
+    <state x="1096" y="625" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1605444282336">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state x="1096" y="625" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.2560.1400@0.0.2560.1400" timestamp="1605339716057" />
+    <state x="1096" y="625" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.2560.1400@0.0.2560.1400" timestamp="1605444282335" />
     <state x="993" y="415" width="656" height="594" key="find.popup" timestamp="1605438932633">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="993" y="415" width="656" height="594" key="find.popup/0.0.2560.1400@0.0.2560.1400" timestamp="1605438932633" />
-    <state x="1066" y="397" width="672" height="678" key="search.everywhere.popup" timestamp="1605443499357">
+    <state x="1066" y="397" width="672" height="678" key="search.everywhere.popup" timestamp="1605447135256">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state x="1066" y="397" width="672" height="678" key="search.everywhere.popup/0.0.2560.1400@0.0.2560.1400" timestamp="1605443499357" />
+    <state x="1066" y="397" width="672" height="678" key="search.everywhere.popup/0.0.2560.1400@0.0.2560.1400" timestamp="1605447135256" />
   </component>
 </project>

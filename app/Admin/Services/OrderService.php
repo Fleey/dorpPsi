@@ -95,7 +95,7 @@ class OrderService
      * @param int $customerid
      * @param array $productList
      */
-    public function createOrderInfo(int $customerid, array $productList)
+    public function createOrderInfo(int $customerid, array $productList, int $createTime = 0)
     {
         $orderModel     = new Orders();
         $orderInfoModel = new OrderInfo();
@@ -111,7 +111,7 @@ class OrderService
             'customerid'   => $customerid,
             'status'       => 2,
             'total_amount' => intval($totalMoney * 100),
-            'created_at'   => date('Y-m-d H:i:s'),
+            'created_at'   => date('Y-m-d H:i:s', $createTime),
             'updated_at'   => date('Y-m-d H:i:s')
         ]);
 
@@ -148,7 +148,7 @@ class OrderService
             $totalMoney += floatval($content['discountPrice']);
         }
 
-       $orderModel->newQuery()->where('orderid',$orderId)->update([
+        $orderModel->newQuery()->where('orderid', $orderId)->update([
             'customerid'   => $customerid,
             'total_amount' => intval($totalMoney * 100),
             'updated_at'   => date('Y-m-d H:i:s')
