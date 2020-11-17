@@ -256,4 +256,22 @@ class OrderController extends AdminController
 
         return $form;
     }
+
+    /**
+     * 获取客户订单列表
+     * @param int $customerid
+     * @param OrderService $orderService
+     * @return \Illuminate\Http\JsonResponse
+     */
+    public function getCustomerOrderList(int $customerid, OrderService $orderService)
+    {
+        $request    = request();
+        $createTime = $request->get('createTime') ?? '';
+        $endTime    = $request->get('endTime') ?? '';
+
+        return response()->json([
+            'status' => true,
+            'data'   => $orderService->getCustomerOrderProductList($customerid, $createTime, $endTime)
+        ]);
+    }
 }

@@ -4,11 +4,13 @@
 namespace App\Admin\Services;
 
 
+use App\Models\Customers;
 use App\Models\OrderInfo;
 use App\Models\Orders;
 use App\Models\Products;
 use Encore\Admin\Facades\Admin;
 use Encore\Admin\Form;
+use Illuminate\Support\Facades\DB;
 
 class OrderService
 {
@@ -165,5 +167,45 @@ class OrderService
                 'updated_at'     => date('Y-m-d H:i:s')
             ]);
         }
+    }
+
+    /**
+     * 获取客户订单商品列表
+     * @param int $customerid
+     * @param string $createTime
+     * @param string $endTime
+     * @return array
+     */
+    public function getCustomerOrderProductList(int $customerid, string $createTime = '', string $endTime = '')
+    {
+        $orderModel     = new Orders();
+        $orderInfoModel = new OrderInfo();
+        $customerModel  = new Customers();
+        $productModel   = new Products();
+
+        $selector = $orderInfoModel->newQuery()->from(DB::raw($orderInfoModel->getTable() . ' as oi'));
+        $selector = $selector->leftJoin(DB::raw($productModel->getTable() . ' p'), 'oi.productid', 'p.productid');
+        $selector = $selector->leftJoin(DB::raw($orderModel->getTable() . ' o'), 'oi.orderid', 'o.orderid');
+        $selector = $selector->leftJoin(DB::raw($customerModel->getTable() . ' c'), 'o.customerid', 'c.customerid');
+
+        $selector = $selector->where('c.customerid', $customerid);
+
+        if (!empty($createTime))
+            $selector = $selector->where('o.created_at', '>=', $createTime);
+        if (!empty($endTime))
+            $selector = $selector->where('o.created_at', '<=', $endTime);
+
+        $ret = $selector->get([
+            DB::raw('c.name as CustomerName'),
+            DB::raw('p.name as ProductName'),
+            DB::raw('oi.total_num as OrderProductTotalNum'),
+            DB::raw('oi.discount_price as OrderDiscountPrice'),
+            DB::raw('oi.desc as OrderDesc')
+        ]);
+
+        if (is_null($ret))
+            return [];
+
+        return $ret->toArray();
     }
 }
