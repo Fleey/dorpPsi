@@ -141,7 +141,7 @@ class OrderController extends AdminController
 
         $customerid  = $request->post('customerid');
         $productList = $request->post('productList');
-        $createTime  = $request->post('createTimel');
+        $createTime  = $request->post('createTime');
 
         if (empty($customerid))
             return response()->json(['status' => false, 'msg' => '必须选择客户信息']);

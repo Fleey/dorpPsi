@@ -5,13 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="67fa53d9-8c1a-4340-bf15-7f6fb464784e" name="Default Changelist" comment="update.save code">
-      <change afterPath="$PROJECT_DIR$/app/Admin/Controllers/OrderPrintController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/Order/OrderPrintPage.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Admin/Controllers/OrderController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Admin/Controllers/OrderController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Admin/Controllers/OrderInfoController.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Admin/Services/OrderService.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Admin/Services/OrderService.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Admin/routes.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Admin/routes.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -399,9 +394,10 @@
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="993" y="415" width="656" height="616" key="find.popup/0.0.2560.1400@0.0.2560.1400" timestamp="1605626315685" />
-    <state x="1066" y="397" width="672" height="678" key="search.everywhere.popup" timestamp="1605621594904">
-      <screen x="0" y="0" width="2560" height="1400" />
+    <state x="746" y="334" width="670" height="532" key="search.everywhere.popup" timestamp="1605699350602">
+      <screen x="0" y="23" width="1792" height="1097" />
     </state>
     <state x="1066" y="397" width="672" height="678" key="search.everywhere.popup/0.0.2560.1400@0.0.2560.1400" timestamp="1605621594904" />
+    <state x="746" y="334" width="670" height="532" key="search.everywhere.popup/1792.63.1920.1057/0.23.1792.1097@0.23.1792.1097" timestamp="1605699350602" />
   </component>
 </project>
