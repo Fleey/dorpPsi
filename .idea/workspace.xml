@@ -195,6 +195,7 @@
       <workItem from="1605404522223" duration="17389000" />
       <workItem from="1605446445416" duration="786000" />
       <workItem from="1605620777116" duration="6026000" />
+      <workItem from="1605879299810" duration="1576000" />
     </task>
     <task id="LOCAL-00001" summary="add data">
       <created>1602421098185</created>
@@ -366,10 +367,10 @@
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="1109" y="635" key="NewPhpFileDialog/0.0.2560.1400@0.0.2560.1400" timestamp="1605622163279" />
-    <state x="1080" y="370" key="RollbackChangesDialog" timestamp="1604824568347">
+    <state x="1080" y="370" key="RollbackChangesDialog" timestamp="1605880799393">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state x="1080" y="370" key="RollbackChangesDialog/0.0.2560.1400@0.0.2560.1400" timestamp="1604824568347" />
+    <state x="1080" y="370" key="RollbackChangesDialog/0.0.2560.1400@0.0.2560.1400" timestamp="1605880799393" />
     <state x="744" y="313" key="SettingsEditor" timestamp="1604818797905">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
@@ -394,10 +395,10 @@
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="993" y="415" width="656" height="616" key="find.popup/0.0.2560.1400@0.0.2560.1400" timestamp="1605626315685" />
-    <state x="746" y="334" width="670" height="532" key="search.everywhere.popup" timestamp="1605699350602">
-      <screen x="0" y="23" width="1792" height="1097" />
+    <state x="1066" y="397" width="672" height="678" key="search.everywhere.popup" timestamp="1605879390641">
+      <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state x="1066" y="397" width="672" height="678" key="search.everywhere.popup/0.0.2560.1400@0.0.2560.1400" timestamp="1605621594904" />
+    <state x="1066" y="397" width="672" height="678" key="search.everywhere.popup/0.0.2560.1400@0.0.2560.1400" timestamp="1605879390641" />
     <state x="746" y="334" width="670" height="532" key="search.everywhere.popup/1792.63.1920.1057/0.23.1792.1097@0.23.1792.1097" timestamp="1605699350602" />
   </component>
 </project>

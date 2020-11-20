@@ -6,6 +6,7 @@ use App\Admin\Actions\Post\AddProduct;
 use App\Admin\Actions\Post\ChangeOrderStatus;
 use App\Admin\Actions\Post\EditOrderInfo;
 use App\Admin\Services\OrderService;
+use App\Models\Areas;
 use App\Models\Customers;
 use App\Models\Orders;
 use Encore\Admin\Controllers\AdminController;
@@ -37,6 +38,10 @@ class OrderController extends AdminController
         $grid->column('orderid', __('Orderid'));
 
         $grid->column('customers.name', '客户名称');
+
+        $grid->column('customers.areaid', '地区')->display(function ($value){
+            return Areas::query()->where('areaid',$value)->value('name');
+        });
 
         $grid->column('status', '订单状态')->display(function ($value) {
             if ($value == 1)
