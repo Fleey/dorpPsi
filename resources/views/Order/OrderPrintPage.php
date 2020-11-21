@@ -182,12 +182,12 @@ if (isset($_GET['_pjax']))
 
                 let productNameDom = $(document.createElement('td')).text(content['ProductName']);
                 let orderProductCountDom = $(document.createElement('td')).text(content['OrderProductTotalNum']);
-                let OrderDiscountPriceDom = $(document.createElement('td')).text(content['OrderDiscountPrice'] / 100);
-                let productPrice = Number(((content['OrderDiscountPrice'] / 100) / content['OrderProductTotalNum']).toString().match(/^\d+(?:\.\d{0,2})?/));
+                let OrderDiscountPriceDom = $(document.createElement('td')).text(content['OrderDiscountPrice']);
+                let productPrice = Number(((content['OrderDiscountPrice']) / content['OrderProductTotalNum']).toString().match(/^\d+(?:\.\d{0,2})?/));
                 let orderProductPriceDom = $(document.createElement('td')).text(productPrice);
-                let orderInfoDescDom = $(document.createElement('td')).text(content['OrderDesc']);
+                let orderInfoDescDom = $(document.createElement('td')).text(content['ProductDesc']);
 
-                totalMoney += content['OrderDiscountPrice'] / 100;
+                totalMoney += content['OrderDiscountPrice'];
 
                 trDom.append(productNameDom, orderProductCountDom, orderProductPriceDom, OrderDiscountPriceDom, orderInfoDescDom);
 

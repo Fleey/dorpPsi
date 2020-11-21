@@ -190,22 +190,45 @@ class OrderService
 
         $selector = $selector->where('c.customerid', $customerid);
 
+        //$selector = $selector->groupBy('oi.productid');
+
         if (!empty($createTime))
             $selector = $selector->where('o.created_at', '>=', $createTime);
         if (!empty($endTime))
             $selector = $selector->where('o.created_at', '<=', $endTime);
 
         $ret = $selector->get([
+            'p.productid',
             DB::raw('c.name as CustomerName'),
             DB::raw('p.name as ProductName'),
             DB::raw('oi.total_num as OrderProductTotalNum'),
             DB::raw('oi.discount_price as OrderDiscountPrice'),
-            DB::raw('oi.desc as OrderDesc')
+            DB::raw('oi.desc as ProductDesc')
         ]);
 
         if (is_null($ret))
             return [];
 
-        return $ret->toArray();
+        $ret = $ret->toArray();
+
+        $returnData = [];
+
+        foreach ($ret as $content){
+
+            if(empty($returnData[$content['productid']])){
+                $returnData[$content['productid']] = $content;
+                continue;
+            }
+
+            $returnData[$content['productid']]['OrderProductTotalNum'] += $content['OrderProductTotalNum'];
+            $returnData[$content['productid']]['OrderDiscountPrice'] += $content['OrderDiscountPrice'];
+
+            if(!empty($content['ProductDesc']))
+                $returnData[$content['productid']]['ProductDesc'] = $content['ProductDesc'];
+        }
+
+        rsort($returnData);
+
+        return $returnData;
     }
 }
